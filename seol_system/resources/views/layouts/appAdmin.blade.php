@@ -63,7 +63,7 @@
                 <ul class="flex flex-col pl-0 mb-auto">
                     <li class="w-full mt-4">
                         <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60">
-                            Estudiante</h6>
+                            Administrador</h6>
                     </li>
                     <li class="mt-0.5 w-full">
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"

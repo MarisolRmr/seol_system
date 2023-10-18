@@ -30,8 +30,8 @@ class HomeController extends Controller
                 case 1: //Admin
                     return view('admin.dashboard');
                     break;
-                case 2: // maestro
-                    return view('maestro.dashboard');
+                case 2: // Oficinista
+                    return view('.dashboard');
                     break;
                 case 3: // estudiante
                     return view('estudiante.dashboard');
