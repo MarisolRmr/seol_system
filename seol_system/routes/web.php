@@ -26,3 +26,5 @@ Route::get('/login', [LoginController::class,'loginForm'])->name('login');
 // Procesar el formulario de inicio de sesión
 Route::post('/login', [LoginController::class,'store'])->name('login.store');
 Route::get('/logout',[LogoutController::class,'store'])->name('logout');
+
+Route::get('/dashboard', [HomeController::class, 'admin'])->name('HomeAdmin');

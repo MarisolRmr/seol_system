@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function __construct(){
-        //protegemos la url
-        //al metodo index con el constructor le pasamos el parametro de autenticacion
-        $this->middleware('auth')->except('index', 'home');
-    }
+    
 
     public function index(){
         return view('auth.login');
+    }
+
+    public function admin(){
+        return view('Admin.dashboard');
     }
 
     public function home() {
@@ -26,7 +26,7 @@ class HomeController extends Controller
 
             
             // Redirigir según el tipo de usuario
-           /* switch ($rol) {
+            /* switch ($rol) {
                 case 1: //Admin
                     return view('admin.dashboard');
                     break;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}" />
     <link rel="icon" type="image/png" href="{{asset('img/favicon.png')}}"/>
-    <title>SEOL</title>
+    <title>Sistema de Asistencia</title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Font Awesome Icons -->
@@ -33,14 +33,14 @@
 
   </head>
 
-  @auth 
+
   <body
     class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
-    @endauth 
+
 
     @yield('contenido_top')
 
-    @auth 
+    
     
         <!-- sidenav  -->
         <aside
@@ -49,7 +49,7 @@
             <div class="h-19" style="display: flex; justify-content: center;">
                 
                 <a class=""style="display: flex;justify-content: center;margin-top: 5%;"
-                     href=" # ">
+                    href=" # ">
                     <img src="{{ asset('img/LOGO-UPV-MODIFICADO-3-1.png') }}"
                         class="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-12"
                         alt="main_logo" />
@@ -63,11 +63,11 @@
                 <ul class="flex flex-col pl-0 mb-auto">
                     <li class="w-full mt-4">
                         <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60">
-                            Oficinista</h6>
+                            Administrador</h6>
                     </li>
                     <li class="mt-0.5 w-full">
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                             href="{{route("admin.dashboard")}}">
+                            href="">
                             <div
                                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -79,7 +79,7 @@
                             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Dashboard</span>
                         </a>
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                             href=" {{route("admin.clases.index")}} ">
+                            href="  ">
                             <div
                                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -92,7 +92,7 @@
                             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Clases</span>
                         </a>
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                             href=" {{route("admin.maestros.index")}} ">
+                            href="  ">
                             <div
                                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -104,7 +104,7 @@
                             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Maestros</span>
                         </a>
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                             href=" {{route("admin.alumnos.index")}} ">
+                            href=" ">
                             <div
                                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -116,7 +116,7 @@
                             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Alumnos</span>
                         </a>
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                             href=" {{route("admin.grupos.index")}} ">
+                            href=" ">
                             <div
                                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -128,7 +128,7 @@
                             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Grupos</span>
                         </a>
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                             href=" {{route("admin.materia.index")}} ">
+                             href="  ">
                             <div
                                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -140,7 +140,7 @@
                             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Materias</span>
                         </a>
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                             href=" {{route("admin.aulas.index")}} ">
+                             href=" ">
                             <div
                                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -152,7 +152,7 @@
                             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Aulas</span>
                         </a>
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                             href=" {{route("logout")}} ">
+                             href="">
                             <div
                                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -170,7 +170,7 @@
             </div>
 
         </aside>
-        @endauth
+        
     <!-- end sidenav -->
         <div
             class="absolute bg-y-50 w-full h-full top-0 bg-[url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/profile-layout-header.jpg')] min-h-75" style="height:100%">
