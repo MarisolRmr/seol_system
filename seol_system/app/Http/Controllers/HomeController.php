@@ -13,10 +13,6 @@ class HomeController extends Controller
         return view('auth.login');
     }
 
-    public function admin(){
-        return view('Admin.dashboard');
-    }
-
     public function home() {
         if (Auth::check()) {
             $user = Auth::user(); // Obtener el usuario autenticado
