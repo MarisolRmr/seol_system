@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\EstudianteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,8 @@ Route::post('/login', [LoginController::class,'store'])->name('login.store');
 Route::get('/logout',[LogoutController::class,'store'])->name('logout');
 
 Route::get('/dashboard', [HomeController::class, 'admin'])->name('HomeAdmin');
+
+Route::get('/estudiante/dashboard', [EstudianteController::class, 'dashboard'])->name('estudiante.dashboard');
+Route::get('/estudiante/solicitudes', [EstudianteController::class, 'solicitudes'])->name('estudiante.solicitudes');
+Route::get('/estudiante/enproceso', [EstudianteController::class, 'enproceso'])->name('estudiante.enproceso');
+
