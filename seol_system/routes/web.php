@@ -29,14 +29,14 @@ Route::get('/login', [LoginController::class,'loginForm'])->name('login');
 Route::post('/login', [LoginController::class,'store'])->name('login.store');
 Route::get('/logout',[LogoutController::class,'store'])->name('logout');
 
-<<<<<<< HEAD
+
 Route::get('/dashboard', [HomeController::class, 'admin'])->name('HomeAdmin');
 
 Route::get('/estudiante/dashboard', [EstudianteController::class, 'dashboard'])->name('estudiante.dashboard');
 Route::get('/estudiante/solicitudes', [EstudianteController::class, 'solicitudes'])->name('estudiante.solicitudes');
 Route::get('/estudiante/enproceso', [EstudianteController::class, 'enproceso'])->name('estudiante.enproceso');
 
-=======
+
 Route::get('/Admin/dashboard', [AdminController::class, 'admin'])->name('Admin.dashboard');
 
 Route::get('/Admin/AgregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.alumnoagregar');
@@ -44,4 +44,4 @@ Route::get('/Admin/AgregarAlumno', [AdminController::class, 'agregarAlumno'])->n
 Route::get('/Admin/AgregarOficinista', [AdminController::class, 'agregarOficinista'])->name('admin.alumnoOficinista');
 
 Route::get('/Admin/GestionPlantilla', [AdminController::class, 'gestionPlantillaView'])->name('admin.gestionPlantilla');
->>>>>>> 3549f65b592e467e7164c03f967386695fede5b2
+
