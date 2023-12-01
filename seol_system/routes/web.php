@@ -38,10 +38,8 @@ Route::get('/estudiante/enproceso', [EstudianteController::class, 'enproceso'])-
 
 
 Route::get('/Admin/dashboard', [AdminController::class, 'admin'])->name('Admin.dashboard');
-
 Route::get('/Admin/AgregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.alumnoagregar');
-
+Route::post('/Admin/Alumnos/create', [AdminController::class,'storeAlumno'])->name('admin.alumno.store');
 Route::get('/Admin/AgregarOficinista', [AdminController::class, 'agregarOficinista'])->name('admin.alumnoOficinista');
-
 Route::get('/Admin/GestionPlantilla', [AdminController::class, 'gestionPlantillaView'])->name('admin.gestionPlantilla');
 
