@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\FilesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,4 +43,7 @@ Route::get('/Admin/AgregarAlumno', [AdminController::class, 'agregarAlumno'])->n
 Route::post('/Admin/Alumnos/create', [AdminController::class,'storeAlumno'])->name('admin.alumno.store');
 Route::get('/Admin/AgregarOficinista', [AdminController::class, 'agregarOficinista'])->name('admin.alumnoOficinista');
 Route::get('/Admin/GestionPlantilla', [AdminController::class, 'gestionPlantillaView'])->name('admin.gestionPlantilla');
+Route::post('/Admin/GestionPlantilla/store',[AdminController::class, 'storePlantilla'])->name('admin.plantilla.store');
+
+
 

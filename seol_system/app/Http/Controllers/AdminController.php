@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Documento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,6 +20,21 @@ class AdminController extends Controller
 
     public function gestionPlantillaView(){
         return view('Admin.GestionarPlantilla');
+    }
+
+    public function storePlantilla(Request $request){
+        $this->validate($request, [
+            'tipo' => 'required',
+            'precio' => 'required',
+        ]);
+        $archivoDocx = $request->file('archivo_docx');
+
+        Documento::create([
+            'tipo' => $request->tipo,
+            'precio' => $request->precio,
+            'plantilla' => $request->plantilla,
+        ]);
+        // return view('Admin.GestionarPlantilla');
     }
 
     public function agregarOficinista(){
