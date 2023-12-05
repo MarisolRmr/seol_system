@@ -42,8 +42,6 @@ Route::get('/Admin/dashboard', [AdminController::class, 'admin'])->name('Admin.d
 Route::get('/Admin/AgregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.alumnoagregar');
 Route::post('/Admin/Alumnos/create', [AdminController::class,'storeAlumno'])->name('admin.alumno.store');
 Route::get('/Admin/AgregarOficinista', [AdminController::class, 'agregarOficinista'])->name('admin.alumnoOficinista');
+Route::post('/Admin/Oficinistas/create', [AdminController::class, 'storeOficinista'])->name('admin.oficinista.store');
 Route::get('/Admin/GestionPlantilla', [AdminController::class, 'gestionPlantillaView'])->name('admin.gestionPlantilla');
-Route::post('/Admin/GestionPlantilla/store',[AdminController::class, 'storePlantilla'])->name('admin.plantilla.store');
-
-
-
+Route::post('/Admin/GestionarPlantilla', [AdminController::class,'storePlantilla'])->name('admin.plantilla.store');

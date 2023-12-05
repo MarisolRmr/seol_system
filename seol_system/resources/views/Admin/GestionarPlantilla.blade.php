@@ -56,7 +56,7 @@
                         </div>
                     </div>
 
-                    <form action="{{route('admin.plantilla.store')}}" method="POST" novalidate>
+                    <form action="{{route('admin.plantilla.store')}}" method="POST" novalidate enctype="multipart/form-data">
                         @csrf
                         <div class="flex-auto p-6">
                             <div class="flex flex-wrap -mx-3">
@@ -64,9 +64,9 @@
                                     <div class="mb-4">
                                         <label for="nombre"
                                             class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Nombre</label>
-                                        <input type="text" id="nombre" name="nombre" placeholder="Nombre"
+                                        <input type="text" id="tipo" name="tipo" placeholder="Nombre"
                                             class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none @error('nombre') border-red-500 @enderror"
-                                            value="{{ old('nombre') }}" />
+                                            value="{{ old('tipo') }}" />
                                     </div>
                                 </div>
 
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="mb-5">
                                     <label for="archivo_docx" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Plantilla</label>
-                                    <input type="file" name="plantilla" id="plantilla" accept=".docx">
+                                    <input type="file" name="archivo_docx" id="archivo_docx" accept=".docx">
                                 </div>
                                 <input type="submit" value="Registrar"
                                class="inline-block w-full px-16 py-3.5 mt-6 mb-0 font-bold leading-normal text-center text-white align-middle transition-all bg-blue-500 border-0 rounded-lg cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs text-sm ease-in tracking-tight-rem shadow-md bg-150 bg-x-25" />

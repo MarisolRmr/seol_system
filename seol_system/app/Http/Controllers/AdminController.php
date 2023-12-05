@@ -6,6 +6,9 @@ use App\Models\User;
 use App\Models\Documento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -22,20 +25,40 @@ class AdminController extends Controller
         return view('Admin.GestionarPlantilla');
     }
 
-    public function storePlantilla(Request $request){
-        $this->validate($request, [
+    public function storePlantilla(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
             'tipo' => 'required',
             'precio' => 'required',
+            'archivo_docx' => 'required',
         ]);
+        if ($validator->fails()) {
+            dd($validator->errors());
+        }
         $archivoDocx = $request->file('archivo_docx');
+        $nombreArchivo = $this->generarNombreUnico($archivoDocx);
 
+        // Guarda el archivo en el directorio deseado
+        $ruta = $archivoDocx->storeAs('public/plantillas', $nombreArchivo);
+
+        // Guarda los detalles en la base de datos
         Documento::create([
             'tipo' => $request->tipo,
             'precio' => $request->precio,
-            'plantilla' => $request->plantilla,
+            'plantilla' => $nombreArchivo,
         ]);
-        // return view('Admin.GestionarPlantilla');
+        
+        return redirect()->back()->with('success', 'Archivo .docx subido correctamente.');
     }
+
+private function generarNombreUnico($archivo)
+{
+    $nombreOriginal = pathinfo($archivo->getClientOriginalName(), PATHINFO_FILENAME);
+    $extension = $archivo->getClientOriginalExtension();
+    $nombreUnico = $nombreOriginal . '_' . uniqid() . '.' . $extension;
+
+    return $nombreUnico;
+}
 
     public function agregarOficinista(){
         return view('Admin.AgregarOficinista');
@@ -78,22 +101,18 @@ class AdminController extends Controller
             'apellidopaterno' => 'required',
             'apellidomaterno' => 'required',
             'email' => 'required|unique:users',
-            'password' => 'required',
-            'curp' => 'required',
-            
+            'password' => 'required',            
         ]);
+
         //Se añade el registro a la base de datos
         User::create([
             'nombre' => $request->nombre,
             'apellido_paterno' => $request->apellidopaterno,
             'apellido_materno' => $request->apellidomaterno,
-            'password' => Hash::make($request->password),
-            'matricula' => $request->matricula,
-            'carrera' => $request->carrera,
             'email' => $request->email,
-            'curp' => $request->curp,
+            'password' => Hash::make($request->password),
             'rol' => 2,
         ]);
-        return redirect()->route('admin.alumnoagregar')->with('success', 'El usuario ha sido registrado correctamente');
+        return redirect()->route('admin.alumnoOficinista')->with('success', 'El usuario ha sido registrado correctamente');
     }
 }
