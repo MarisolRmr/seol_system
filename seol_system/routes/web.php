@@ -49,3 +49,5 @@ Route::get('/Admin/GestionPlantilla', [AdminController::class, 'gestionPlantilla
 Route::get('/Oficinista/solicitudes', [OficinistaController::class, 'solicitudesVista'])->name('estudiante.solicitudesVista');
 Route::get('/Oficinista/Proceso', [OficinistaController::class, 'ProcesoVista'])->name('estudiante.enprocesoVista');
 
+Route::post('/Admin/Oficinistas/create', [AdminController::class, 'storeOficinista'])->name('admin.oficinista.store');
+Route::get('/Admin/GestionPlantilla', [AdminController::class, 'gestionPlantillaView'])->name('admin.gestionPlantilla');

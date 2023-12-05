@@ -17,4 +17,5 @@ class EstudianteController extends Controller
     public function enproceso(){
         return view('estudiante.enproceso');
     }
+
 }

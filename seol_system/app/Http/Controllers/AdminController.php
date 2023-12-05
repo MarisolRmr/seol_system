@@ -62,22 +62,18 @@ class AdminController extends Controller
             'apellidopaterno' => 'required',
             'apellidomaterno' => 'required',
             'email' => 'required|unique:users',
-            'password' => 'required',
-            'curp' => 'required',
-            
+            'password' => 'required',            
         ]);
+
         //Se añade el registro a la base de datos
         User::create([
             'nombre' => $request->nombre,
             'apellido_paterno' => $request->apellidopaterno,
             'apellido_materno' => $request->apellidomaterno,
-            'password' => Hash::make($request->password),
-            'matricula' => $request->matricula,
-            'carrera' => $request->carrera,
             'email' => $request->email,
-            'curp' => $request->curp,
+            'password' => Hash::make($request->password),
             'rol' => 2,
         ]);
-        return redirect()->route('admin.alumnoagregar')->with('success', 'El usuario ha sido registrado correctamente');
+        return redirect()->route('admin.alumnoOficinista')->with('success', 'El usuario ha sido registrado correctamente');
     }
 }
