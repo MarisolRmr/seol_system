@@ -15,7 +15,7 @@ class LoginController extends Controller
     //Funcion para autentificar al usuario
     public function store(Request $request){
         $this->validate($request, [
-            'username' => 'required',
+            'email' => 'required',
             'password' => 'required'
         ]);
 

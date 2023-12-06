@@ -1,7 +1,7 @@
 @extends('layouts.appOficinista')
 
 @section('titulo')
-    Solicitudes en Proceso 
+    Historial de Solicitudes 
 @endsection
 <!-- Agrega el elemento a la stack en app.blade.php -->
 @push('styles')
@@ -29,7 +29,7 @@
                 </div>
                 <div class="flex-none w-auto max-w-full px-3 my-auto">
                     <div class="h-full">
-                        <h5 class="mb-1 dark:text-black">Solicitudes en Proceso</h5>
+                        <h5 class="mb-1 dark:text-black">Historial de Solicitudes</h5>
                         <p class="mb-0 font-semibold leading-normal dark:text-black dark:opacity-60 text-sm">Oficinista</p>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                             <!-- Imagen circular -->
                             <div class="flex items-center justify-center p-4">
                                 <div class="w-16 h-16 overflow-hidden rounded-full">
-                                    <img src="{{ asset('img/oficinista/papeles.png') }}" alt="Imagen del alumno" class="w-full h-full object-cover">
+                                    <img src="{{ asset('img/oficinista/docu.png') }}" alt="Imagen del alumno" class="w-full h-full object-cover">
                                 </div>
                             </div>
                             
@@ -77,12 +77,13 @@
                                 <p class="text-xs dark:text-black">Número de matrícula</p>
                             </div>
                             
-                            <!-- Botones -->
+                            <!-- Botón de ver -->
                             <div class="flex items-center justify-center p-2">
                                 <button class="flex items-center bg-blue-500 hover:bg-blue-300 text-white px-4 py-2 rounded-full">
                                     <i class="fas fa-eye mr-2"></i> Ver
                                 </button>
                             </div>
+                            
                             
                         </div>
                     </div>
