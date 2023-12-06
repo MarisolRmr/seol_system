@@ -18,4 +18,8 @@ class EstudianteController extends Controller
         return view('estudiante.enproceso');
     }
 
+    public function historial(){
+        return view('estudiante.historial');
+    }
+
 }
