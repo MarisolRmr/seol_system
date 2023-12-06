@@ -1,22 +1,21 @@
-@extends('layouts.appOficinista')
+@extends('layouts.appAdmin')
 
 @section('titulo')
-    Dashboard Administrador
+    Dashboard Oficinista
 @endsection
 <!-- Agrega el elemento a la stack en app.blade.php -->
 @push('styles')
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 @endpush
 
-@section('contenido_top')
+{{-- @section('contenido_top')
     <div
         class="absolute bg-y-50 w-full top-0 bg-[url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/profile-layout-header.jpg')] min-h-75">
         <span class="absolute top-0 left-0 w-full h-full bg-blue-500 opacity-60"></span>
     </div>
-@endsection
+@endsection --}}
 
 @section('contenido')
-<br> 
     <div class="relative w-full mx-auto mt-500 ">
         <div
             class="relative flex flex-col flex-auto min-w-0 p-4 mx-6 overflow-hidden break-words bg-white border-0 dark:bg-slate-850 dark:shadow-dark-xl shadow-3xl rounded-2xl bg-clip-border">
