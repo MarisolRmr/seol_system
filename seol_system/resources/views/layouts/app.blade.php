@@ -33,14 +33,9 @@
 
   </head>
 
-  @auth 
-  <body
+
+    <body
     class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
-    @endauth 
-
-    @yield('contenido_top')
-
-    
     
         
     <!-- end sidenav -->
