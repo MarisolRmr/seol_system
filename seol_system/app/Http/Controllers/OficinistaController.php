@@ -11,4 +11,8 @@ class OficinistaController extends Controller
     public function ProcesoVista(){
         return view('Oficinista.enproceso');
     }
+
+    public function solicitudesVista(){
+        return view('Oficinista.solicitudes');
+    }
 }
