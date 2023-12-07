@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}" />
-        <link rel="icon" type="image/png" href="{{asset('img/favicon.png')}}"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/icono_papeles.png')}}" />
+        <link rel="icon" type="image/png" href="{{asset('img/icono_papeles.png')}}"/>
         <title>Solicitud de Documentos Escolares</title>
         <!--     Fonts and icons     -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -30,7 +30,6 @@
         <script src="{{asset('js/argon-dashboard-tailwind.min.js')}}"></script>
         <script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
         <script src="{{asset('js/plugins/chartjs.min.js')}}"></script>
-
         <style>
             .bg-profile-header {
                 background-image: url('{{ asset('img/fondo.png') }}');
@@ -55,22 +54,20 @@
                 z-index: 1;
             }
         </style>
-
     </head>
 
+    
 
     <body
-        class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
-
+        class="m-0 font-sans text-base antialiased font-normal  leading-default  text-slate-500">
+        
         <div class="bg-overlay"></div>
+
         @yield('contenido_top')
 
-<<<<<<< HEAD
-    @yield('contenido_top')
-
-    
-    
-        <!-- sidenav  -->
+        
+        
+            <!-- sidenav  -->
         <aside
             class="fixed inset-y-0 flex-wrap items-center overflow-y-auto justify-between block w-full p-0 my-4 antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0"
             aria-expanded="false">
@@ -91,7 +88,8 @@
                 <ul class="flex flex-col pl-0 mb-auto">
                     <li class="w-full mt-4">
                         <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60">
-                            Estudiante</h6>
+                            Estudiante
+                        </h6>
                     </li>
                     <li class="mt-0.5 w-full">
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
@@ -132,7 +130,7 @@
                             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">En Proceso</span>
                         </a>
                         <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                             href="{{route('estudiante.historial')}}">
+                            href="  {{route('estudiante.historial')}}">
                             <div
                                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -143,124 +141,25 @@
                             </div>
                             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Historial</span>
                         </a>
-                        <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                             href=" ">
-                            <div
-                                class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-house-door-fill relative top-0 text-sm  text-blue-500" viewBox="0 0 16 16">
-                                    <path
-                                        d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
-                                </svg>
-                            </div>
-                            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Cerrar Sesión</span>
-                        </a>
-                    </li>
-=======
-        
-        
-            <!-- sidenav  -->
-            <aside
-                class="fixed inset-y-0 flex-wrap items-center overflow-y-auto justify-between block w-full p-0 my-4 antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0"
-                aria-expanded="false">
-                <div class="h-19" style="display: flex; justify-content: center;">
->>>>>>> c4cdd98eb6259b323bd3d2bae3156baa0465470f
-                    
-                    <a class=""style="display: flex;justify-content: center;margin-top: 5%;"
-                        href=" # ">
-                        <img src="{{ asset('img/LOGO-UPV-MODIFICADO-3-1.png') }}"
-                            class="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-12"
-                            alt="main_logo" />
-                    </a>
-                </div>
-
-                <hr
-                    class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent" />
-
-                <div class="items-center flex-grow flex-basis-full">
-                    <ul class="flex flex-col pl-0 mb-auto">
-                        <li class="w-full mt-4">
-                            <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60">
-                                Estudiante</h6>
-                        </li>
-                        <li class="mt-0.5 w-full">
-                            <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                                href="{{route('estudiante.dashboard')}} ">
-                                <div
-                                    class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-house-door-fill relative top-0 text-sm  text-blue-500" viewBox="0 0 16 16">
-                                        <path
-                                            d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
-                                    </svg>
-                                </div>
-                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Dashboard</span>
-                            </a>
-                            <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                                href=" {{route('estudiante.solicitudes')}} ">
-                                <div
-                                    class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-house-door-fill relative top-0 text-sm  text-blue-500" viewBox="0 0 16 16">
-                                        <path
-                                            d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
-                                    </svg>
-
-                                </div>
-                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Solicitudes</span>
-                            </a>
-                            <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                                href=" {{route('estudiante.enproceso')}} ">
-                                <div
-                                    class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-house-door-fill relative top-0 text-sm  text-blue-500" viewBox="0 0 16 16">
-                                        <path
-                                            d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
-                                    </svg>
-                                </div>
-                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">En Proceso</span>
-                            </a>
-                            <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                                href="  ">
-                                <div
-                                    class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-house-door-fill relative top-0 text-sm  text-blue-500" viewBox="0 0 16 16">
-                                        <path
-                                            d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
-                                    </svg>
-                                </div>
-                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Historial</span>
-                            </a>
-                            <a class="py-2.7   dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                                href="">
-                                <div
-                                    class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-house-door-fill relative top-0 text-sm  text-blue-500" viewBox="0 0 16 16">
-                                        <path
-                                            d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
-                                    </svg>
-                                </div>
-                                <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Cerrar Sesión</span>
-                            </a>
-                        </li>
                         
+                    </li>
+                    
 
-                    </ul>
-                </div>
+                </ul>
+            </div>
 
-            </aside>
+        </aside>
             
         <!-- end sidenav -->
-            {{-- <div
+        {{-- <div
                 class="absolute bg-y-50 w-full h-full top-0 bg-[url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/profile-layout-header.jpg')] min-h-75" style="height:100%">
                 <span class="absolute top-0 left-0 w-full h-full bg-blue-500 opacity-60"></span>
-            </div> --}}
-            <main style="height:100%" class="relative h-full max-h-screen transition-all duration-200 rounded-xl">
+        </div> --}}
+            <main style="height:100%" class="relative h-full max-h-screen transition-all duration-200 rounded-xl ">
             
                 <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
+        
+
                     <!-- Navbar -->
                     <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start"
                         navbar-main navbar-scroll="false">
@@ -287,29 +186,29 @@
                             <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
                                 <div class="flex items-center md:ml-auto md:pr-4">
                                     <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
-
-
+        
+        
                                     </div>
                                 </div>
                                 <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-
+        
                                     @auth
                                         <li class="flex items-center">
                                             <a href="  "
                                                 class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">
                                                 <i class="fa fa-user sm:mr-1"></i>
-                                                <span class="hidden sm:inline p-2"> {{ auth()->user()->username }} </span> 
+                                                {{-- <span class="hidden sm:inline p-2"> {{ auth()->user()->username }} </span> --}}
                                             </a>
                                         </li>
-
+        
                                         <li class="flex items-center">
-                                            <a href="{{route('logout')}}"
+                                            <a href=""
                                                 class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">
                                                 <span class="hidden sm:inline"> Cerrar Sesión </span>
                                             </a>
                                         </li>
                                     @endauth
-
+        
                                     @guest
                                         <li class="flex items-center">
                                             <a href=""
@@ -320,7 +219,7 @@
                                         </li>
                                         
                                     @endguest
-
+        
                                     <li class="flex items-center pl-4 xl:hidden">
                                         <a href="javascript:;"
                                             class="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
@@ -335,12 +234,13 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> 
                     </nav>
                     <!-- end Navbar -->
 
                     @yield('contenido')
-                
+                    
+
 
                 </main>
             </main>
@@ -366,19 +266,7 @@
             <!--Select2-->
             
             <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-            <script>
-                // Mostrar y ocultar el menú al pasar el mouse sobre el nombre de usuario
-                const userMenu = document.getElementById('user-menu');
-                const userMenuContent = document.getElementById('user-menu-content');
             
-                userMenu.addEventListener('mouseenter', () => {
-                    userMenuContent.classList.remove('hidden');
-                });
-            
-                userMenu.addEventListener('mouseleave', () => {
-                    userMenuContent.classList.add('hidden');
-                });
-            </script>
 
         
     </body>

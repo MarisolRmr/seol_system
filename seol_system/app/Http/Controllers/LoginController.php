@@ -15,40 +15,42 @@ class LoginController extends Controller
     //Funcion para autentificar al usuario
     public function store(Request $request){
         $this->validate($request, [
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        // Comprobar si el usuario existe como correo electrónico o nombre de usuario
-        $user = User::where('username', $request->username)
-        ->orWhere('password', $request->password)
-        ->first();
-
-        if (!$user) {
-        return back()->with('mensaje', 'El usuario o correo electrónico no fue encontrado.');
+        // Condicion para saber si el user se pudo autenticar
+        if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
+            // back() para volver a la pagina anterior, en este caso, con un mensaje
+            return back()->with('errors', 'Credenciales Incorrectas');
         }
 
-        // Verificar las credenciales
-        if (!auth()->attempt(['password' => $request->password, 'username' => $user->username], $request->remember) &&
-        !auth()->attempt(['password' => $request->password, 'password' => $user->password], $request->remember)) {
-        return back()->with('mensaje', 'Contraseña incorrecta, vuelva a intentarlo.');
-        }
+        $rol= User::where('email',$request->email)->select('rol')->first();
 
-
-        return view('dashboard'); // Ruta para el dashboard
-
-
-        /*
+        // if($status->status==0){
+        //     return back()->with('errors', 'El usuario está incativo');
+        // }
+        //dd($rol);
         // Redirecciona
-        if ($user->rol === 1) {
-            return view('admin.dashboard'); // Ruta para el administrador
-        } elseif ($user->rol === 2) {
-            return view('maestro.dashboard'); // Ruta para el maestro
-        } elseif ($user->rol === 3) {
+        //return redirect()->route('post.index');
+
+        
+        // Redirecciona
+        if ($rol === 1) {
+            return view('Admin.dashboard'); // Ruta para el administrador
+            return redirect()->route('post.index');
+
+        } elseif ($rol === 2) {
+            dd("entre Oficnista");
+            return view('Oficinista.dashboard'); // Ruta para el maestro
+        } elseif ($rol === 3) {
+            dd($rol);
             return view('estudiante.dashboard'); // Ruta para el estudiante
+            return redirect()->route('post.index');
+
         }
 
-        */
+        
 
 
     }
