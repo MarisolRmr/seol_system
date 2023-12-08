@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/icono_papeles.png')}}" />
+    <link rel="icon" type="image/png" href="{{asset('img/icono_papeles.png')}}"/>
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-    <link rel="icon" type="image/png" href="{{asset('img/favicon.png')}}"/>
+    
     <title>SEOL</title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
