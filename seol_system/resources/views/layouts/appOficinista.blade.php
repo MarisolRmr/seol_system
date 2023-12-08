@@ -212,7 +212,7 @@
                                         </li>
         
                                         <li class="flex items-center">
-                                            <a href=""
+                                            <a href="{{route('logout')}}"
                                                 class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">
                                                 <span class="hidden sm:inline"> Cerrar Sesión </span>
                                             </a>

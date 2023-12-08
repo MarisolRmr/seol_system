@@ -13,9 +13,10 @@ class LoginController extends Controller
     }
 
     //Funcion para autentificar al usuario
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $this->validate($request, [
-            'email' => 'required|email',
+            'email' => 'required',
             'password' => 'required'
         ]);
 
@@ -25,35 +26,19 @@ class LoginController extends Controller
             return back()->with('errors', 'Credenciales Incorrectas');
         }
 
-        $rol= User::where('email',$request->email)->select('rol')->first();
+        // Obtener el rol del usuario
+        $userRole = User::where('email', $request->email)->value('rol');
 
-        // if($status->status==0){
-        //     return back()->with('errors', 'El usuario está incativo');
-        // }
-        //dd($rol);
         // Redirecciona
-        //return redirect()->route('post.index');
-
-        
-        // Redirecciona
-        if ($rol === 1) {
-            return view('Admin.dashboard'); // Ruta para el administrador
-            return redirect()->route('post.index');
-
-        } elseif ($rol === 2) {
-            dd("entre Oficnista");
-            return view('Oficinista.dashboard'); // Ruta para el maestro
-        } elseif ($rol === 3) {
-            dd($rol);
-            return view('estudiante.dashboard'); // Ruta para el estudiante
-            return redirect()->route('post.index');
-
+        if ($userRole == 1) {
+            return redirect()->route('Admin.dashboard');
+        } elseif ($userRole == 2) {
+            return redirect()->route('oficinista.dashboard');
+        } elseif ($userRole == 3) {
+            return redirect()->route('estudiante.dashboard');
         }
-
-        
-
-
     }
+
 
 
 

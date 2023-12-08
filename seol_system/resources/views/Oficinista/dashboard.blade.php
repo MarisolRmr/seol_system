@@ -1,4 +1,4 @@
-@extends('layouts.appAdmin')
+@extends('layouts.appOficinista')
 
 @section('titulo')
     Dashboard Oficinista
@@ -29,7 +29,7 @@
                 <div class="flex-none w-auto max-w-full px-3 my-auto">
                     <div class="h-full">
                         <h5 class="mb-1 dark:text-black">Dashboard</h5>
-                        <p class="mb-0 font-semibold leading-normal dark:text-black dark:opacity-60 text-sm">Administrador</p>
+                        <p class="mb-0 font-semibold leading-normal dark:text-black dark:opacity-60 text-sm">Oficinista</p>
                     </div>
                 </div>
             </div>

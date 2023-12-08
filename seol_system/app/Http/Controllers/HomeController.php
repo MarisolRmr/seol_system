@@ -24,10 +24,10 @@ class HomeController extends Controller
             // Redirigir según el tipo de usuario
             switch ($rol) {
                 case 1: //Admin
-                    return view('admin.dashboard');
+                    return view('Admin.dashboard');
                     break;
                 case 2: // Oficinista
-                    return view('.dashboard');
+                    return view('Oficinista.dashboard');
                     break;
                 case 3: // estudiante
                     return view('estudiante.dashboard');
