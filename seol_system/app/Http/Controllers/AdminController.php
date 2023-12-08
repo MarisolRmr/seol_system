@@ -25,6 +25,10 @@ class AdminController extends Controller
         return view('Admin.GestionarPlantilla');
     }
 
+    public function editarDocumentoView(){
+        return view('Admin.EditarDocumento');
+    }
+
     public function storePlantilla(Request $request)
     {
         $validator = Validator::make($request->all(), [
