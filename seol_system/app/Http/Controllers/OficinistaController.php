@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Documento;
 use Illuminate\Http\Request;
 use PhpOffice\PhpWord\TemplateProcessor;
 
@@ -51,12 +52,16 @@ class OficinistaController extends Controller
         return view('Oficinista.historial');
     }
 
-<<<<<<< HEAD
     public function Perfil(){
         return view('Oficinista.perfil');
-=======
+    }
+
     public function editarDocumentoView(){
         return view('Oficinista.EditarDocumento');
->>>>>>> c5c44b7e5fe1c87847eb1e14bd928074bc2c4a8c
+    }
+
+    public function Documento(){
+        $documento=Documento::all();
+        return view('Oficinista.plantillas',["documento"=>$documento]);
     }
 }
