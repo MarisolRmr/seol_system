@@ -37,6 +37,7 @@ Route::get('/estudiante/dashboard', [EstudianteController::class, 'dashboard'])-
 Route::get('/estudiante/solicitudes', [EstudianteController::class, 'solicitudes'])->name('estudiante.solicitudes');
 Route::get('/estudiante/enproceso', [EstudianteController::class, 'enproceso'])->name('estudiante.enproceso');
 Route::get('/estudiante/historial', [EstudianteController::class, 'historial'])->name('estudiante.historial');
+Route::get('/estudiante/Perfil', [EstudianteController::class, 'Perfil'])->name('estudiante.perfil');
 
 Route::get('/Admin/dashboard', [AdminController::class, 'admin'])->name('Admin.dashboard');
 Route::get('/Admin/AgregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.alumnoagregar');
@@ -51,3 +52,4 @@ Route::get('/Oficinista/dashboard', [OficinistaController::class, 'dashboard'])-
 Route::get('/Oficinista/solicitudes', [OficinistaController::class, 'solicitudesVista'])->name('oficinista.solicitudesVista');
 Route::get('/Oficinista/Proceso', [OficinistaController::class, 'ProcesoVista'])->name('oficinista.enprocesoVista');
 Route::get('/Oficinista/HistorialDocumentos', [OficinistaController::class, 'HistorialVista'])->name('oficinista.HistorialVista');
+Route::get('/Oficinista/Perfil', [OficinistaController::class, 'Perfil'])->name('oficinista.perfil');

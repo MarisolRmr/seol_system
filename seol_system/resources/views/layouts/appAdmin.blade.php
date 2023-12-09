@@ -62,7 +62,7 @@
 
 
     <body
-        class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
+        class="m-0 font-sans text-base antialiased font-normal leading-default  text-slate-500">
 
         <div class="bg-overlay"></div>
         @yield('contenido_top')
@@ -157,10 +157,8 @@
                 <span class="absolute top-0 left-0 w-full h-full bg-blue-500 opacity-60"></span>
             </div> --}}
             <main style="height:100%" class="relative h-full max-h-screen transition-all duration-200 rounded-xl">
-            
                 <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
         
-
                     <!-- Navbar -->
                     <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start"
                         navbar-main navbar-scroll="false">

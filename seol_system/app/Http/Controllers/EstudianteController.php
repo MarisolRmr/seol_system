@@ -22,4 +22,8 @@ class EstudianteController extends Controller
         return view('estudiante.historial');
     }
 
+    public function Perfil(){
+        return view('estudiante.perfil');
+    }
+
 }

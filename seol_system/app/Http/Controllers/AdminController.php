@@ -73,8 +73,9 @@ private function generarNombreUnico($archivo)
             'apellidomaterno' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required',
-            'curp' => 'required',
-            'matricula' => 'required',
+            'rfc'=>'required|unique:users',
+            'curp' => 'required|unique:users',
+            'matricula' => 'required|unique:users',
             'carrera' => 'required',
             
         ]);
@@ -87,6 +88,7 @@ private function generarNombreUnico($archivo)
             'matricula' => $request->matricula,
             'carrera' => $request->carrera,
             'email' => $request->email,
+            'rfc'=> $request->rfc,
             'curp' => $request->curp,
             'rol' => 3,
         ]);

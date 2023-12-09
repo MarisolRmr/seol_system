@@ -157,7 +157,6 @@
             
                 <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
         
-
                     <!-- Navbar -->
                     <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start"
                         navbar-main navbar-scroll="false">
@@ -192,13 +191,13 @@
         
                                     @auth
                                         <li class="flex items-center">
-                                            <a href="  "
+                                            <a href="{{route('estudiante.perfil')}}  "
                                                 class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">
                                                 <i class="fa fa-user sm:mr-1"></i>
-                                                {{-- <span class="hidden sm:inline p-2"> {{ auth()->user()->username }} </span> --}}
+                                                <span class="hidden sm:inline p-2"> {{ auth()->user()->nombre }} </span>
                                             </a>
                                         </li>
-        
+                                        
                                         <li class="flex items-center">
                                             <a href="{{route('logout')}}"
                                                 class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">

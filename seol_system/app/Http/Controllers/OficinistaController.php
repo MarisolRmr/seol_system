@@ -23,4 +23,8 @@ class OficinistaController extends Controller
     public function HistorialVista(){
         return view('Oficinista.historial');
     }
+
+    public function Perfil(){
+        return view('Oficinista.perfil');
+    }
 }

@@ -204,10 +204,10 @@
         
                                     @auth
                                         <li class="flex items-center">
-                                            <a href="  "
+                                            <a href="{{route('oficinista.perfil')}}  "
                                                 class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">
                                                 <i class="fa fa-user sm:mr-1"></i>
-                                                {{-- <span class="hidden sm:inline p-2"> {{ auth()->user()->username }} </span> --}}
+                                                <span class="hidden sm:inline p-2"> {{ auth()->user()->nombre }} </span>
                                             </a>
                                         </li>
         
