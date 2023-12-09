@@ -43,7 +43,7 @@
                 <div class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
                     <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6 pb-0">
                         <div class="flex items-center">
-                            <p class="mb-0 dark:text-black/80">Ingrese los siguientes datos para el documento</p>
+                            <p class="mb-0 dark:text-black/80">Ingrese los siguientes datos para el documento {{$nombreDocumento}}</p>
                         </div>
                     </div>
 

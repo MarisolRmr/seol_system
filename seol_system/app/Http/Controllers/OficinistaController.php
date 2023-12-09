@@ -60,7 +60,9 @@ class OficinistaController extends Controller
     }
 
     public function editarDocumentoView($id){
-        return view('Oficinista.EditarDocumento', ['id' => $id]);
+        $documento = Documento::find($id);
+        $nombreDocumento= $documento->tipo;
+        return view('Oficinista.EditarDocumento', ['id' => $id, 'nombreDocumento' => $nombreDocumento]);
     }
 
     public function Documento(){
