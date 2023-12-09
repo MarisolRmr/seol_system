@@ -132,7 +132,7 @@
                                                     </p>
                                                 </td>
                                                 <td  class=" p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent exclude-column ">
-                                                    <a href="{{ route('oficinista.editarDocumento', $doc->id) }}">
+                                                    <a href="{{ route('oficinista.editarDocumento', ['id' =>$doc->id]) }}">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                             height="16" fill="currentColor" class="bi bi-pencil-square"
                                                             viewBox="0 0 16 16">
@@ -192,7 +192,7 @@
         $('.btn-delete').on('click', function(e) {
             e.preventDefault();
 
-            let Id = $(this).data('id');
+            let Id = $(this).data('plantilla');
 
             Swal.fire({
                 title: "¿Estás seguro de eliminar este cliente?",

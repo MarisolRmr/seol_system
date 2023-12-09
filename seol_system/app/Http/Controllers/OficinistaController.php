@@ -11,10 +11,12 @@ use PhpOffice\PhpWord\TemplateProcessor;
 class OficinistaController extends Controller
 {
     //
-    public function modificarDocumento(Request $request)
+    public function modificarDocumento(Request $request, $id)
     {
-        $nombreArchivo = $request->nombreArchivo;
-        $rutaArchivo = storage_path("app/public/plantillas/test.docx");
+        $documento = Documento::find($id);
+
+        $nombreArchivo = $documento->plantilla;
+        $rutaArchivo = storage_path("app/public/plantillas/{$nombreArchivo}");
 
         if (!file_exists($rutaArchivo)) {
             return response()->json(['error' => 'El archivo no existe.']);
@@ -28,6 +30,7 @@ class OficinistaController extends Controller
         $templateProcessor->setValue('matricula', $request->matricula);
         $templateProcessor->setValue('cuatrimestre', $request->cuatrimestre);
         $templateProcessor->setValue('fecha', $request->fecha);
+        $templateProcessor->setValue('carrera', $request->carrera);
 
         $rutaTemporal = storage_path("app/public/plantillas/test2.docx");
         $templateProcessor->saveAs($rutaTemporal);
@@ -56,8 +59,8 @@ class OficinistaController extends Controller
         return view('Oficinista.perfil');
     }
 
-    public function editarDocumentoView(){
-        return view('Oficinista.EditarDocumento');
+    public function editarDocumentoView($id){
+        return view('Oficinista.EditarDocumento', ['id' => $id]);
     }
 
     public function Documento(){

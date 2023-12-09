@@ -55,6 +55,6 @@ Route::get('/Oficinista/solicitudes', [OficinistaController::class, 'solicitudes
 Route::get('/Oficinista/Proceso', [OficinistaController::class, 'ProcesoVista'])->name('oficinista.enprocesoVista');
 Route::get('/Oficinista/HistorialDocumentos', [OficinistaController::class, 'HistorialVista'])->name('oficinista.HistorialVista');
 Route::get('/Oficinista/Perfil', [OficinistaController::class, 'Perfil'])->name('oficinista.perfil');
-Route::get('/Oficinista/EditarDocumento', [OficinistaController::class, 'editarDocumentoView'])->name('oficinista.editarDocumento');
-Route::post('/Oficinista/modificacion', [OficinistaController::class,'modificarDocumento'])->name('ruta.modificar');
+Route::get('/Oficinista/EditarDocumento/{id}', [OficinistaController::class, 'editarDocumentoView'])->name('oficinista.editarDocumento');
+Route::post('/Oficinista/modificacion/{id}', [OficinistaController::class,'modificarDocumento'])->name('ruta.modificar');
 Route::get('/Oficinista/Plantillas', [OficinistaController::class,'Documento'])->name('oficinista.plantilla');
