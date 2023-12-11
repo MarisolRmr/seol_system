@@ -39,6 +39,7 @@ Route::post('/estudiante/solicitudes', [EstudianteController::class, 'store']);
 Route::get('/estudiante/enproceso', [EstudianteController::class, 'enproceso'])->name('estudiante.enproceso');
 Route::get('/estudiante/historial', [EstudianteController::class, 'historial'])->name('estudiante.historial');
 Route::get('/estudiante/Perfil', [EstudianteController::class, 'Perfil'])->name('estudiante.perfil');
+Route::post('/estudiante/Descargar/{id}', [EstudianteController::class, 'descargarDocumento'])->name('estudiante.descargar');
 
 Route::get('/Admin/dashboard', [AdminController::class, 'admin'])->name('Admin.dashboard');
 Route::get('/Admin/AgregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.alumnoagregar');
@@ -59,3 +60,4 @@ Route::get('/Oficinista/Perfil', [OficinistaController::class, 'Perfil'])->name(
 Route::get('/Oficinista/EditarDocumento/{id}', [OficinistaController::class, 'editarDocumentoView'])->name('oficinista.editarDocumento');
 Route::post('/Oficinista/modificacion/{id}', [OficinistaController::class,'modificarDocumento'])->name('ruta.modificar');
 Route::get('/Oficinista/Plantillas', [OficinistaController::class,'Documento'])->name('oficinista.plantilla');
+Route::post('/Oficinista/aceptarSolicitud/{id}/{nombre}/{documento}', [OficinistaController::class,'aceptarSolicitud'])->name('oficinista.aceptar');
