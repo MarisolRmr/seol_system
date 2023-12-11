@@ -35,6 +35,7 @@ Route::get('/dashboard', [HomeController::class, 'admin'])->name('HomeAdmin');
 
 Route::get('/estudiante/dashboard', [EstudianteController::class, 'dashboard'])->name('estudiante.dashboard');
 Route::get('/estudiante/solicitudes', [EstudianteController::class, 'solicitudes'])->name('estudiante.solicitudes');
+Route::post('/estudiante/solicitudes', [EstudianteController::class, 'store']);
 Route::get('/estudiante/enproceso', [EstudianteController::class, 'enproceso'])->name('estudiante.enproceso');
 Route::get('/estudiante/historial', [EstudianteController::class, 'historial'])->name('estudiante.historial');
 Route::get('/estudiante/Perfil', [EstudianteController::class, 'Perfil'])->name('estudiante.perfil');
