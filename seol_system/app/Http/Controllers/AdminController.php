@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Validator;
 class AdminController extends Controller
 {
     //
+    // public function __construct()
+    // {
+    //     // Para verificar que el user este autenticado
+    //     // except() es para indicar cuales metodos pueden usarse sin autenticarse
+    //     $this->middleware('auth');
+    // }
     public function admin(){
         return view('Admin.dashboard');
     }

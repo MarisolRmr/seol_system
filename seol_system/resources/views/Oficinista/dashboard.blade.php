@@ -1,4 +1,4 @@
-@extends('layouts.appOficinista')
+@extends('layouts.appAdmin')
 
 @section('titulo')
     Dashboard Oficinista

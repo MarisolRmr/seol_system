@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class EstudianteController extends Controller
 {
+    // public function __construct()
+    // {
+    //     // Para verificar que el user este autenticado
+    //     // except() es para indicar cuales metodos pueden usarse sin autenticarse
+    //     $this->middleware('auth');
+    // }
     public function dashboard()
     {
         return view('estudiante.dashboard');
