@@ -43,52 +43,90 @@
         <div class="flex flex-wrap -mx-3">
             <div id="Solicitudes" class="relative flex flex-col flex-auto min-w-0 p-4 mx-6 overflow-hidden break-words">
                 <div class="flex flex-wrap -mx-3">
-                    @foreach(range(1, 6) as $index)
-                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 px-3 mb-4">
-                        <div class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-                            
-                            <!-- Estado y Circulito verde -->
-                            <div class="flex items-center justify-between p-2">
-                                <span class="text-sm font-semibold dark:text-black">Estado</span>
-                                <div class="w-4 h-4 bg-green-500 rounded-full"></div>
-                            </div>
-                            
-                            <!-- Solicitud de -->
-                            <div class="flex items-center p-2">
-                                <span class="text-sm font-semibold">Solicitud de</span>
-                            </div>
-                            
-                            <!-- Imagen circular -->
-                            <div class="flex items-center justify-center p-4">
-                                <div class="w-16 h-16 overflow-hidden rounded-full">
-                                    <img src="{{ asset('img/oficinista/papeles.png') }}" alt="Imagen del alumno" class="w-full h-full object-cover">
+                    @foreach($solicitudes as $solicitud)
+                        @if ($solicitud->plantillaCreada =="NoListo")
+                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 px-3 mb-4">
+                            <div class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+                                
+                                <!-- Estado y Circulito verde -->
+                                <div class="flex items-center justify-between p-2">
+                                    <span class="text-sm font-semibold dark:text-black">Estado</span>
+                                    @if ($solicitud->plantillaCreada =="NoListo")
+                                    <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                                    
+                                    @else
+                                    <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+                                    @endif
                                 </div>
+                                
+                                <!-- Solicitud de -->
+                                <div class="flex items-center p-2">
+                                    <span class="text-sm font-semibold">{{"Solicitud de " . $solicitud->documento->tipo}}</span>
+                                </div>
+                                
+                                <!-- Imagen circular -->
+                                <div class="flex items-center justify-center p-4">
+                                    <div class="w-16 h-16 overflow-hidden rounded-full">
+                                        <img src="{{ asset('img/oficinista/docu.png') }}" alt="Imagen del alumno" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                
+                                <!-- Alumno -->
+                                <div class="text-center">
+                                    <p class="text-sm font-semibold mb-1 dark:text-black">Alumno</p>
+                                    <p class="text-xs mb-1 dark:text-black">{{ $solicitud->user->nombre . " " . $solicitud->user->apellido_paterno . " " . $solicitud->user->apellido_materno}} </p>
+                                </div>
+                                
+                                <!-- Matricula -->
+                                <div class="text-center mb-2">
+                                    <h6 class="text-xs font-semibold dark:text-black">Matrícula</h6>
+                                    <p class="text-xs dark:text-black">{{ $solicitud->user->matricula }}</p>
+                                </div>
+                                
+                                <!-- Botón de ver -->
+                                {{-- <div class="flex items-center justify-center p-2">
+                                    <button class="flex items-center bg-blue-500 hover:bg-blue-300 text-white px-4 py-2 rounded-full">
+                                        <i class="fas fa-eye mr-2"></i> Ver
+                                    </button>
+                                </div> --}}
+                                
+                                
                             </div>
-                            
-                            <!-- Alumno -->
-                            <div class="text-center">
-                                <p class="text-sm font-semibold mb-1 dark:text-black">Alumno</p>
-                                <p class="text-xs mb-1 dark:text-black">Nombre del alumno</p>
-                            </div>
-                            
-                            <!-- Matricula -->
-                            <div class="text-center mb-2">
-                                <h6 class="text-xs font-semibold dark:text-black">Matrícula</h6>
-                                <p class="text-xs dark:text-black">Número de matrícula</p>
-                            </div>
-                            
-                            <!-- Botones -->
-                            <div class="flex items-center justify-center p-2">
-                                <button class="flex items-center bg-blue-500 hover:bg-blue-300 text-white px-4 py-2 rounded-full">
-                                    <i class="fas fa-eye mr-2"></i> Ver
-                                </button>
-                            </div>
-                            
                         </div>
-                    </div>
-                    
+                        
+                        
+                        @else
+                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 px-3 mb-4">
+                            <div class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+                                
+                                <!-- Estado y Circulito verde -->
+                                <div class="flex items-center justify-between p-2">
+                                    <span class="text-sm font-semibold dark:text-black">Proceso</span>
+                                    
+                                </div>
+                                
+                                <!-- Solicitud de -->
+                                <div class="flex items-center p-2">
+                                    <span class="text-sm font-semibold">No hay documentos en proceso</span>
+                                </div>
+                                
+                                <!-- Imagen circular -->
+                                <div class="flex items-center justify-center p-4">
+                                    <div class="w-16 h-16 overflow-hidden rounded-full">
+                                        <img src="{{ asset('img/oficinista/docu.png') }}" alt="Imagen del alumno" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        @endif
                     @endforeach
+
                 </div>
+                
                 
             </div>
             

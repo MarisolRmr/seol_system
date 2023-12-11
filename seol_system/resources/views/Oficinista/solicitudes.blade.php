@@ -78,21 +78,14 @@
                             </div>
                             
                             <!-- Botones -->
-                            <div class="flex justify-between space-x-2 p-2">
+                            <div class="flex items-center justify-center p-2">
                             <form action="{{ route('oficinista.aceptar', ['id' => $solicitud->id, 'nombre' => $solicitud->user->nombre, 'documento'=> $solicitud->documento->tipo]) }}" method="POST" novalidate enctype="multipart/form-data">
                                 @csrf
                                 <button class="flex items-center bg-blue-500 hover:bg-blue-300 text-white px-4 py-2 rounded-full transition-all duration-300">
                                     <i class="fas fa-check-circle mr-2"></i> Aceptar
                                 </button>
                             </form>
-                                
-                                <button class="flex items-center bg-red-500 hover:bg-red-300 text-white px-4 py-2 rounded-full transition-all duration-300">
-                                    <i class="fas fa-trash-alt mr-2"></i> Eliminar
-                                </button>
                             </div>
-                            
-                            
-                            
                         </div>
                     </div>
                     

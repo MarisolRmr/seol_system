@@ -76,7 +76,8 @@ class OficinistaController extends Controller
     }
 
     public function ProcesoVista(){
-        return view('Oficinista.enproceso');
+        $solicitudes = UsuariosDocumentosPago::with('user', 'documento')->get();
+        return view('Oficinista.enproceso', ['solicitudes' => $solicitudes]);
     }
 
     public function solicitudesVista(){
@@ -85,7 +86,8 @@ class OficinistaController extends Controller
     }
 
     public function HistorialVista(){
-        return view('Oficinista.historial');
+        $solicitudes = UsuariosDocumentosPago::with('user', 'documento')->get();
+        return view('Oficinista.historial', ['solicitudes' => $solicitudes]);
     }
 
     public function Perfil(){

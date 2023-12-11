@@ -43,7 +43,7 @@
     <div class="w-full max-w-full px-3 shrink-0 md:w-7/12 md:flex-0">
  
     <div class="relative flex flex-col min-w-0 break-words bg-white border-8 shadow-xl rounded-2xl bg-clip-border">
-        <img class="w-full rounded-t-2xl" src="{{ asset('img/estudiante/estudiante.png') }}" alt="profile cover image">
+        <img class="w-full rounded-t-2xl" src="{{ asset('img/icono.png') }}" alt="profile cover image">
         <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6 pb-0">
             
         </div>

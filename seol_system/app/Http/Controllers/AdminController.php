@@ -17,6 +17,11 @@ class AdminController extends Controller
         return view('Admin.dashboard');
     }
 
+    public function Alumnos(){
+        $usuarios = User::where('rol', 3)->get();
+        return view('Admin.Alumnos', ['usuarios' => $usuarios]);
+    }
+
     public function agregarAlumno(){
         return view('Admin.AñadirAlumno');
     }
@@ -55,17 +60,27 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Archivo .docx subido correctamente.');
     }
 
-private function generarNombreUnico($archivo)
-{
-    $nombreOriginal = pathinfo($archivo->getClientOriginalName(), PATHINFO_FILENAME);
-    $extension = $archivo->getClientOriginalExtension();
-    $nombreUnico = $nombreOriginal . '_' . uniqid() . '.' . $extension;
+    private function generarNombreUnico($archivo)
+    {
+        $nombreOriginal = pathinfo($archivo->getClientOriginalName(), PATHINFO_FILENAME);
+        $extension = $archivo->getClientOriginalExtension();
+        $nombreUnico = $nombreOriginal . '_' . uniqid() . '.' . $extension;
 
-    return $nombreUnico;
-}
+        return $nombreUnico;
+    }
 
     public function agregarOficinista(){
         return view('Admin.AgregarOficinista');
+    }
+
+    public function Oficinistas(){
+        $usuarios = User::where('rol', 2)->get();
+        return view('Admin.Oficinistas', ['usuarios' => $usuarios]);
+    }
+
+    public function Documentos(){
+        $documento=Documento::all();
+        return view('Admin.plantillas',["documento"=>$documento]);
     }
 
     //Funcion para almacenar Alumnos en la base de datos
